@@ -4,15 +4,11 @@ Machine learning AI that aims to complete Chrome's "no network" t-rex game flawl
 
 We got our inspiration from this video https://goo.gl/itxZIe.
 
-We are trying to make this project in 2months from scratch only using c++. 
-This a homemade project of 2students. Intrested in using github and learning c++.
+We are trying to make this project in two months from scratch using only c++. 
+This is a homemade project of two students. Interested getting more familiar with github and learning c++.
 
 Why c++?
 
-Well, we never worked with c++ before, and like to learn the language by creating this project. But we do have some experience with other languages like C#.
-
-
-
-
+Well, we have never worked with c++ before, and would like to learn the language by creating this project. We do have some experience with other languages like C#.
 
 See "schedule.html" for deadlines
