@@ -44,7 +44,23 @@
   <p>As it turns out git is a little more complicated than I had anticipated. I was hoping to just enter some random commands into CLI and get it running exactly the way I wanted to.<p>
   <p>We did get everything up and running the way we wanted it to, and if you're reading this, everything works. I'm using git via ssh/shell to edit this message. I will have to catch up with Ruben on c++ though.</p>
 	
+<h3> 03/04/2017 </h3>
+<h4> Ruben </h4>
+	<h5>Get window size of the game (Vector2)</h5>
+	<p>This was done by first seeing where the ground line was opposite of the dino, then I would see when a white pixel would start, then I added some functions to check if it just wasn't cactus or hill by checking how long the white space lasted, and by checking the shape.</p>
+	<img href="x">
+   <h5>Get dino position (Vector2)</h5>
+	<p>We just simply used 4for lusses (xy for whole screen pixels and xy for dinoImage) to compare the pixels with each other. Not the best solution but this isn't really the main point of the project so it will do the job.</p>
 	
+	<p>We had some problems where a function returned the first pointer to an RGBQUAD array with pixels with the size of the array, the size because after returing the array sizeof() woudln't be working anymore</p>
+	<p>After we got this running we had a weird issue where some of the last RGBQUAD array's values would change.</p>
+	<p>In our example this would happen after excuting the command cout.</p>
+	<p>I found a solution by returning a vector<RGBQUAD> instad of an RGBQUAD array with the size/p>
+	<img href="x">
+
+  <h5>Update -> read each pixel in window</h5>
+    <p>Not alot has changed with the prev version just that now instead of an "RGBQUAD[]" it will return a "vector<RGBQUAD>"</p>
+
 
 </body>
 
