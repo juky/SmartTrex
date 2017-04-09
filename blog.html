@@ -96,7 +96,11 @@
    <h5>Search obstacles within window size (size, heigth)</h5>
 		<p>This one is hard to find a good solution, our solution now is by checking every x pixels if the color is white or black where black is a value under 200</p>
 		<p>There should be a better solution but this isn't our main goal and gives us ok performance.</p>
-		<p>Then if the pixel is seen as black we take the dimentions liek x,y,width,height of the pixel b</p> 
+		<p>Then if the pixel is seen as black we take the dimentions like x,y,width,height of the pixel.</p> 
+		<p>After we have the dimentions, we go and check if this rect is anywhere close to another rect we already checked.</p>
+		<p>If not we add this rect.</p>
+		<p>If yes, then we update the rect that is close to the new rect where we give x,y the lowest value of the oldRect/newRect so we are sure both rects are in this updated rect.</p>
+		
 		<h5>Dino check with only white pixels</h5>
 		<p>This is done by just checking if the value is below a certain value in my case 200.</p>
 
