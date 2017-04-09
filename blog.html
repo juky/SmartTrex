@@ -51,12 +51,13 @@
 	<img href="x">
    <h5>Get dino position (Vector2)</h5>
 	<p>We just simply used 4for lusses (xy for whole screen pixels and xy for dinoImage) to compare the pixels with each other. Not the best solution but this isn't really the main point of the project so it will do the job.</p>
-	
+	<p></p>
 	<p>We had some problems where a function returned the first pointer to an RGBQUAD array with pixels with the size of the array, the size because after returing the array sizeof() woudln't be working anymore</p>
 	<p>After we got this running we had a weird issue where some of the last RGBQUAD array's values would change.</p>
 	<p>In our example this would happen after excuting the command cout.</p>
 	<p>I found a solution by returning a vector<RGBQUAD> instad of an RGBQUAD array with the size/p>
 	<p>By the pos of the dino and width of the floor you can draw a rect of the area we will need to check alot. Like in the image below.</p>
+	<p>There also was alot of time spend debugging searching a bug where the command to get the pixels expected you to use singed integers/chars, after writing a funciton that displayed the bits (2bytes) of the char we found the problem.</p>
 
 	<img href="x">
 
@@ -71,9 +72,33 @@
 	<p> Eventually as Ruben mentioned we ended up going with 4 different for loops, there is some optimization possible (recursive vs iterative), but for now this will do. </p>
 		
 		
-	
-		
-		
+<h3> 09/04/2017 </h3>
+<h4> Ruben </h4>
+		<h5>Other</h5>
+		<p>At the beginnening I found out the program took alot more time to excute the commands after alot of searching I found the problem was caused by using vector instead of the array's we previsouly removed.</p>
+	<img href="05042017">
+		<p>This was setup to debug the time needed to excute the code.</p>
+	<img href="05042017">
+		<p>This was the excute time using vector for the pixels of the whole screen and the dino image</p>
+	<img href="05042017">
+		<p>This was the excute time using vector for the pixels of just the dino image and array's for the whole screen. A bit better but could be faster.</p>
+	<img href="05042017">
+		<p>This was the excute time using only arrays. As you can see a big performance increase compared to the vector.</p>
+		<p></p>
+		<p>This test was possible by putting everything needed in 1 function, because like before we already had some trouble at first returning an array</p>
+		<p>Then I Looked up what I was doing wrong before when returning array's, I seemed that after returing the array the machine didn't know I still was using the array, the fix was to declare the variabel on a other way.</p>
+		<p>Wrong</p>
+		<p>RGBQUAD a[10]</p>
+		<p>Good way</p>
+		<p>RGBQUAD* a=new RGBQUAD[10]</p>
+		<p>After implemting this I had some trouble by forgetting I coudln't use sizeof(). But after fixing this everying worked like it should with the better perforances.</p>
+		<h5>Get window size of the game (Vector2)</h5>
+   <h5>Search obstacles within window size (size, heigth)</h5>
+		<p>This one is hard to find a good solution, our solution now is by checking every x pixels if the color is white or black where black is a value under 200</p>
+		<p>There should be a better solution but this isn't our main goal and gives us ok performance.</p>
+		<p>Then if the pixel is seen as black we take the dimentions liek x,y,width,height of the pixel b</p> 
+		<h5>Dino check with only white pixels</h5>
+		<p>This is done by just checking if the value is below a certain value in my case 200.</p>
 
 
 </body>
